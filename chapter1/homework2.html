@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box1{
+				width:377px;
+				border:1px solid ;
+				border-color:#d4d0c8 #404040 #404040 #d4d0c8;
+				/*这里border的四条边颜色如果不是统一的话，不能写在它的复合样式里面
+				    border：1px solid #d4d0c8 #404040 #404040 #d4d0c8;
+				      这样的写法会使得边框没有颜色。
+				 */
+				padding:1px 0 0 1px;
+				margin:auto;
+				}
+			#box2{
+				border:1px solid;
+				border-color:#d4d0c8 #808080 #808080 #d4d0c8;
+				background:#d4d0c8;
+				height:80px;
+		
+				
+			}
+			#box3{
+				font:bold 11px/18px arial; 
+			    color:#ffffff ;
+			    word-spacing:7px;
+			    text-indent:2px;
+				margin:1px;
+				background-image:url(img/head.jpg);
+				/*font是没有颜色属性的，font要写复合样式必须要带有size和family*/
+				
+			}
+			#box4{
+				padding: 12px 95px  22px   56px;
+				font:12px/14px "宋体";
+				/*background-image:url(img/warm.png);
+				background-repeat:no-repeat;
+				background-position:10px 28px;*/
+				background: url(img/warm.png) no-repeat 10px 9px;
+				
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box2">
+				<div id="box3">Adobe Photoshop CS4 Extended</div>
+				<div id="box4">要在关闭之前存储对 Adobe Photoshop 文档"未标题-1"的更改？</div>
+
+					
+				
+					
+				
+			</div>
+		</div>
+	</body>
+</html>
