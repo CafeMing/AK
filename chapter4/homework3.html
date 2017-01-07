@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		 #wrap,#listest,#img,{
+		 	margin:0;
+		 }
+			#wrap{
+				width:1936px;
+				height:1927px;
+				background:#1d2088;
+				position:relative;
+			span{
+				margin:0;
+				padding:0;
+			}	
+			}
+			span{
+				font:bold 47px/47px "宋体";
+			}
+/*			#wrap:after{
+				content:"";
+				display:block;
+				clear:both;
+			}*/
+			/*左边*/
+			#listest{
+				width:528px;
+				height:1764px;
+				background:#920783;
+				position:absolute;
+			/*	position:relative;*/    /*这里的元素是上级的子元素，是下级的父元素，它的绝对定位是从它的父级开始，但是它子级的绝对定位是从它开始。所以不用给它设置relative*/
+				top:100px;               /*意思就是，如果父级永远是子级的相对定位。*/
+				left:36px;
+			}
+			#listest span{
+				/*margin-left:7px;*/
+			}
+			#img{
+				width:428px;
+				height:1492px;
+				background:#89c997;
+				position:absolute;
+				top:221px;
+				left:48px;
+				
+			}
+             #img span{
+             	position:absolute;
+             	top:239px;
+             	left:176px;
+             }
+			/*中间*/
+			#box{
+				width:750px;
+				height:1756px;
+				background:#00561f;
+				position:absolute;
+				top:116px;
+				left:660px;
+			}
+			#box span{
+				position:absolute;
+				left:42px;
+				top:12px;
+			}
+			#header{
+				position:absolute;
+				width:620px;
+				height:284px;
+				background:#00a0e9;
+				left:88px;
+				top:68px;
+			}
+			#header span{
+				position:absolute;
+				top:44px;
+				left:78px;
+			}
+			#nav{
+				width:660px;
+				height:612px;
+				background:#00a0e9;
+				position:absolute;
+				top:420px;
+				left:60px;
+			}
+			#nav span{
+				position:absolute;
+				top:125px;
+				left:82px;
+			}
+			#footer{
+				width:680px;
+				height:668px;
+				background:#00a0e9;
+				position:absolute;
+				top:1076px;
+				left:48px;
+			}
+			#footer span{
+				position:absolute;
+				left:37px;
+			}
+			#li{
+				width:560px;
+				height:193px;
+				background:#b28850;
+				position: absolute;
+				top:60px;
+				left:72px;
+			}
+			#li span{
+				position:absolute;
+				top:37px;
+				left:144;
+			}
+			#img1{
+				width:173px;
+				height:209px;
+				background:#b28850;
+				position:absolute;
+				top:380px;
+				left:48px;
+			}
+			#img1 span{
+				position:absolute;
+				top:50px;
+				left:69px;
+			}
+			#img2{
+				width:181px;
+				height:204px;
+				background:#b28850;
+				position:absolute;
+				top:405px;
+				left:294px;
+			}
+			#img2 span{
+				position:absolute;
+				top:66px;
+				left:71px;
+			}
+			#img3{
+				width:131px;
+				height:184px;
+				background:#b28850;
+				position:absolute;
+				right:0px;
+				top:425px;
+			}
+			#img3 span{
+				position: absolute;
+				top:55px;
+				left:20px;
+			}
+			/*右边*/
+			#lastest{
+				width:433px;
+				height:1833px;
+				background:#fff100;
+				position:absolute;
+				top:76px;
+				right:28px;
+			}
+			#lastest span{
+				position:absolute;
+				top:-8px;
+				left:84px;
+			}
+			#h2{
+				width:348px;
+				height:117px;
+				background:#a84200;
+				position:absolute;
+				top:44px;
+				right:24px;
+			}
+			#h2 span{
+				position:absolute;
+				top:29px;
+				left:53px;
+			}
+			#h3{
+				width:304px;
+				height:280px;
+				background:#8c97cb;
+				position:absolute;
+				right: 51px;
+				top:278px;
+			}
+			#h3-1{
+				width:192px;
+				height:88px;
+				background:red;
+				position:absolute;
+				top:28px;
+				right:52px;
+			}
+			#h3-1 span{
+				position: absolute;
+				top:22px;
+				right:43px;
+			}
+			#h3-2{
+				 width:208px;
+				 height:96px;
+				 background:red;
+				 position:absolute;
+				 bottom:12px;
+				 right:28px;
+			}
+			#h3-2 span{
+				position:absolute;
+				top:34px;
+				left:86px;
+			}
+			#h4{
+				width:325px;
+				height:300px;
+				background:#8c97cb;
+				position:absolute;
+				top:633px;
+				right:23px;
+			}
+			#h4-1{
+				width:188px;
+				height:104px;
+				background:red;
+				position: absolute;
+				top:36px;
+				right:48px;
+			}
+			#h4-1 span{
+				position: absolute;
+				top:16px;
+				right:45px;
+			}
+			#h4-2{
+				width:244px;
+				height:84px;
+				background:red;
+				position:absolute;
+				bottom:24px;
+				right:24px;
+			}
+			#h4-2 span{
+				position:absolute;
+				top:34px;
+				left:98px;
+			}
+			#h5{
+				width:336px;
+				height:324px;
+				background:#8c97cb;
+				position: absolute;
+				bottom:493px;
+				right:20px;
+			}
+			#h5-1{
+				width:204px;
+				height:96px;
+				background:red;
+				position: absolute;
+				top:36px;
+				right:56px;
+			}
+			#h5-1 span{
+				position: absolute;
+				top:12px;
+				left:82px;
+			}
+			#h5-2{
+				width:236px;
+				height:112px;
+				background:red;
+				position: absolute;
+				right:40px;
+				bottom:16px;
+			}
+			#h5-2 span{
+				position: absolute;
+				top:41px;
+				left:98px;
+			}
+			#end{
+				width:340px;
+				height:344px;
+				background:#a6937c;
+				position:absolute;
+				bottom:48px;
+				right:32px;
+			}
+			#end span{
+				position: absolute;
+				left:38px;
+				top:84px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">wrap
+			<!--左边-->
+			<div id="listest"><span>listest</span>
+				
+				<div id="img"><span>img</span></div>
+			</div>
+			<!--中间-->
+			<div id="box"><span>box</span>
+				<div id="header"><span>header</span></div>
+				<div id="nav"><span>nav</span></div>
+				<div id="footer"><span>footer</span>
+					<div id="li"><span>li</span></div>
+					<div id="img1"><span>img</span></div>
+					<div id="img2"><span>img</span></div>
+					<div id="img3"><span>img<span></div>
+				</div>
+			</div>
+			<!--右边-->
+			<div id="lastest"><span>lastest</span>
+				<div id="h2"><span>h2</span></div>
+				<div id="h3">
+					<div id="h3-1"><span>h3</span></div>
+					<div id="h3-2"><span>p</span></div>
+				</div>
+			    <div id="h4">
+			    	<div id="h4-1"><span>h3</span></div>
+			    	<div id="h4-2"><span>p</span></div>
+			    </div>
+			    <div id="h5">
+			    	<div id="h5-1"><span>h3</span></div>
+			    	<div id="h5-2"><span>p</span></div>
+			    	
+			    </div>
+			    <div id="end"><span>end</span></div>
+			</div>
+		</div>
+	</body>
+</html>
