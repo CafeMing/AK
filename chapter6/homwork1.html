@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			img,div{
+				margin:0;
+			}
+			#big{
+				width:600px;
+				height:100px;
+				border:10px solid red; 
+				position:relative;
+				overflow: hidden;
+				font-size:0;
+			}          
+			#small{
+				position:absolute;
+				top:0;
+				left:0;
+				white-space: nowrap;
+				animation:4s move linear infinite normal;
+			}
+			img{
+				width:150px;
+			}
+			@keyframes move{
+				10%{
+					left:0px;
+				}
+				30%{
+					left:-150px;
+				}
+				50%{
+					left:-300px;
+				}
+				70%{
+					left:-400px;
+				}
+				100%{
+					left:-550px;
+				}
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="big">
+			<div id='small'>
+              <img src="img/pic01.jpg" />
+              <img src="img/pic02.jpg" />
+              <img src="img/pic03.jpg" />
+              <img src="img/pic04.jpg" />
+              <img src="img/pic01.jpg" />
+              <img src="img/pic02.jpg" />
+              <img src="img/pic03.jpg" />
+              <img src="img/pic04.jpg" />
+			</div>
+		</div>
+
+	</body>
+</html>

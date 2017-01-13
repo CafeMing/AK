@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		    body{
+		    	margin:0;
+		    }
+			div{  
+				width:200px;
+			    height:200px; 
+		  		transform-style:preserve-3d;
+		      	perspective:800px;
+		      	position:relative;
+		      	margin:200px auto;
+		      	animation:5s move ease infinite normal; 
+		      	transform-origin: center center;
+			}
+			body:hover div{
+				animation-play-state:paused;
+			}
+			img{
+				width:100px;
+				height:100px;
+				position:absolute;
+			}
+			img:nth-child(1){
+				transform:translateZ(0px);
+			}
+			img:nth-child(2){
+				transform:translateZ(-100px);
+			}
+			img:nth-child(3){
+				transform-origin:left bottom;
+				transform:rotateY(90deg) ;
+			}
+			img:nth-child(4){
+				transform-origin:right bottom;
+				transform:rotateY(-90deg) ;
+			}
+			img:nth-child(5){
+				transform-origin:left top;
+				transform:rotateX(-90deg);
+			}
+			img:nth-child(6){
+				transform-origin:left bottom;
+				transform:rotateX(90deg);
+			}
+			@keyframes move{
+				20%{
+					transform: rotateX(100deg) rotateY(100deg) rotateZ(100deg);
+				}
+				50%{
+					transform: rotateX(200deg) rotateY(200deg) rotateZ(200deg);
+				}
+				70%{
+					transform: rotateX(300deg) rotateY(300deg) rotateZ(300deg);
+				}
+				100%{
+					transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+				}
+			}
+				
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			  <img src="img/pic01.jpg" />
+              <img src="img/pic02.jpg" />
+              <img src="img/pic03.jpg" />
+              <img src="img/pic04.jpg" />
+              <img src="img/pic01.jpg" />
+              <img src="img/pic02.jpg" />
+		</div>
+	</body>
+</html>
