@@ -1,0 +1,45 @@
+p{
+	margin:0
+}
+input{
+	margin-left:10px;
+}
+#box{
+	conten:"";
+	display:block;
+	clear:both;
+}
+#box1{
+	margin-top:20px;
+	width:400px;
+	float:left;
+}
+#img1{
+	width:400px;
+	height:400px;
+	cursor:pointer;
+}
+#box1 p{
+	text-align:center;
+	font:18px "微软雅黑";
+}
+#box1 span{
+	font:15px "微软雅黑"; 
+}
+#box2{
+	margin:20px 0 0 30px;;
+	width:400px;
+	float:left; 
+}
+#img2{
+	width:400px;
+	height:400px;
+	cursor:pointer;
+}
+#box2 p{
+	text-align:center;
+	font:18px "微软雅黑";
+}
+#box2 span{
+	font:15px "微软雅黑";
+}
