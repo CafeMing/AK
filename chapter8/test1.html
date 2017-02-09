@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			window.onload=function(){
+				var span=document.querySelectorAll('span');
+				var btn=document.querySelector('input');
+				var arr = [ '100px', 'abc'-6, [], -98765, 34, -2, 0, '300', , function(){alert(1);}, null, document, [], true, '200px'-30,'23.45元', 5, Number('abc'), function(){ alert(3); }, 'xyz'-90 ];
+				//第一项
+				function first(){	
+					var numb='number';
+				 	var n=0;
+				 	var pureNumber=[]; //纯数字数组
+	 					for(var i=0;i<arr.length;i++){
+	 							 if(typeof(arr[i])==numb&&!isNaN(arr[i])){//因为转成数字会有两种值，一个是数字，另一种是NaN
+	 							 	//console.log(arr[i]); 得到全部纯数字的元素 
+	 							 	pureNumber[n]=arr[i];   //把得到符合的数据赋值到自己定义的数组收集起来。
+	 							 	n++;
+	 							}
+						}
+						for(var n=0;n<pureNumber.length-1;n++){
+							span[0].innerHTML+=pureNumber[n]+'，';
+						}
+						while(n==pureNumber.length-1){
+							span[0].innerHTML+=pureNumber[pureNumber.length-1];
+							n++;
+						}
+				}
+				//第二项
+				function second(){
+					var numb='number';
+					var changeNumber=[];//能够转化为数字的数组
+					var n=0;
+						for(var i=0;i<arr.length;i++){
+							  if(typeof(parseFloat(arr[i]))==numb&&!isNaN(parseFloat(arr[i]))){
+									//console.log(arr[i]); 得到能够转化为数字的元素
+									changeNumber[n]=arr[i];
+									n++;
+							  }
+						}
+						for(var n=0;n<changeNumber.length-1;n++){
+							span[1].innerHTML+=changeNumber[n]+'、';
+						}
+						while(n==changeNumber.length-1){
+							span[1].innerHTML+=changeNumber[changeNumber.length-1];
+							n++;
+						}
+				//第三项
+				//对于数字的比较大小。一定要把字符串转化成纯数字去比较，
+					function third(){		  
+						  var max=parseFloat(changeNumber[0]);
+						  for(var n=0;n<changeNumber.length;n++){
+						  		if(max<parseFloat(changeNumber[n])){
+						  			max=parseFloat(changeNumber[n]);
+						  		}
+						  }
+						  span[2].innerHTML=max;
+					}
+					third(); 
+				}
+				//第四项
+				function four(){
+					var numb='number'; 
+					var place=[]; //位置的数组
+					var n=0;
+						for(var i=0;i<arr.length;i++){
+							if(isNaN(arr[i])&&typeof(arr[i])==numb){
+								place[n]=i;
+								n++
+							}
+						}
+						for(n=0;n<place.length-1;n++){
+							span[3].innerHTML+=place[n]+'、';
+						}
+						while(n==place.length-1){
+							span[3].innerHTML+=place[place.length-1];
+							n++
+						}
+				}
+			//显示结果
+				btn.onclick=function(){
+					
+	 					first();
+	 					second();
+	 					
+	 					four();
+	 				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value='显示结果'></input>
+		<p>1.arr里所有的数字为：<span></span></p>
+		<p>2.可以转成数字的是：<span></span></p>
+		<p>3.arr里最大值是：<span></span></p>
+		<p>4.值为NaN的位置：<span></span></p>
+	</body>
+</html>
