@@ -55,7 +55,7 @@ window.onload=function(){
 		})(n);
 		function result(){
 			var allPrice=0;
-			var maxPrice=[];
+			var maxPrice=[0];
 			var allNumb=0;
 			var i=0;
 				for(n=0;n<box.length;n++){
