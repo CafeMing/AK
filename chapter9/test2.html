@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div,ul,p{
+				margin:0;
+				padding:0;
+			}
+			#box1{
+				height:390px;
+				width:280px;
+				background:#010101 no-repeat;
+				margin:50px auto ;
+				position:relative;
+			}
+			ul{
+				list-style: none;
+			}
+			#box1 li{
+				float:left;
+				width:40px;
+				font:15px/30px "微软雅黑";
+				text-align:center;
+				color:white;
+				border-bottom:1px solid gainsboro;
+			}
+			#top{
+				height:110px;
+			}
+			#top #time{
+				font:25px/25px "微软雅黑";
+				position:absolute;
+				top:10px;
+				left:4px;
+				color:white;
+				text-align: center;
+			}
+			#top #date{
+				position:absolute;
+				top:35px;
+				left:4px;
+				font:10px/15px "微软雅黑";
+				color:red;
+			}
+			#top #set{
+				position: absolute;
+				top:70px;
+				left:70px;
+				
+			}
+			#top #set input{
+				background:rgba(0,0,0,0);
+				border:none;
+				font-size: 15px;
+				color:white;
+				cursor:pointer;
+			}
+			#top #set input:hover{
+				border:1px solid gainsboro;
+			}
+			#box2 span{
+				float:left;
+				font:15px/40px "微软雅黑";
+				color:white;
+				width:40px;
+				text-align: center;
+			}
+			#box2 span.active{
+				color:red;
+				border-radius:20%;
+				background:#3a150f;
+				
+			}
+			#box2 span.none{
+				color:gray;
+			}
+		</style>
+		<script src="js/test2.js"></script>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="top">
+				<p id="time"></p>
+				<p id="date">2017年2月16日星期四</p>
+				<p id="set">
+					<input type="button" value="<" id="pre"/>
+					<span style="color:white;">2017年2月</span>
+					<input type="button" value=">" id="next"/>	
+				</p>
+				
+				
+			</div>
+			<ul>
+				<li>日</li>
+				<li>一</li>
+				<li>二</li>
+				<li>三</li>
+				<li>四</li>
+				<li>五</li>
+				<li>六</li>
+			</ul>
+			<div id="box2">
+			</div>
+		</div>
+	</body>
+</html>
