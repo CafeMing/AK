@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			ul{
+				border:1px solid black;
+				float:left;
+				padding-right:20px;
+				font-size:30px;
+				position:relative;
+			}
+			li{
+				width:300px;
+				height:50px;
+				position:relative;
+				/*transition: 1s linear;*/   /*当使用move的时候，css3的动作事件会影响*/
+			}
+			input{
+				font-size: 30px;
+			}
+		</style>
+		<script src='js/move.js'></script>
+		<script src='js/test03.js'></script>
+	</head>
+	<body>
+		<ul id='ul'>
+			<li>
+				11111
+				<input type="button" value="1上移" class="pre"/>
+				<input type="button" value="1下移" class="next"/>
+			</li>
+			<li>
+				22222
+				<input type="button" value="2上移" class="pre"/>
+				<input type="button" value="2下移" class="next"/>
+			</li>
+			<li>
+				33333
+				<input type="button" value="3上移" class="pre"/>
+				<input type="button" value="3下移" class="next"/>
+			</li>
+			<li>
+				44444
+				<input type="button" value="4上移" class="pre"/>
+				<input type="button" value="4下移" class="next"/>
+			</li>
+		</ul>
+
+	</body>
+</html>
