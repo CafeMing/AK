@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				background:red;
+				border:5px solid blue;
+				cursor:default;
+				position:absolute;
+				left:300px;
+				top:300px;
+			}
+		</style>		
+		<script>
+			window.onload=function(){
+				var div=document.querySelector("div");
+				
+				div.onmousedown=function(ev){
+					var startX=ev.clientX;  //刚点击时候鼠标的位置
+					var startY=ev.clientY;
+					var divW=div.clientWidth;  	//点击时候元素的宽度
+					var divH=div.clientHeight;//点击时候元素的高度
+					var positionB=getAtt(div).bottom;  //点击时候元素底部距离可视区
+					var positionT=getAtt(div).top;	 //点击时候元素顶部距离可视区
+					var positionR=getAtt(div).right;	 //点击时候元素右边距离可视区
+					var positionL=getAtt(div).left;	 //点击时候元素左边距离可视区
+					var l=ev.clientX-getAtt(div).left;	//判断鼠标在左边上的范围
+					var r=getAtt(div).right-ev.clientX;	//判断鼠标在右边上的范围
+					var t=ev.clientY-getAtt(div).top;	//判断鼠标在上边上的范围
+					var b=getAtt(div).bottom-ev.clientY;	//判断鼠标在下边上的范围
+					var disL=ev.clientX-getAtt(div).left;  //鼠标距离元素左边的距离
+					var disT=ev.clientY-getAtt(div).top;	//鼠标距离元素上边的距离
+					
+					//元素的拖拽
+					document.onmousemove=function(ev){
+						div.style.left=ev.clientX-disL+'px';
+						div.style.top=ev.clientY-disT+'px';
+					}
+					document.onmouseup=function(){
+						document.onmousemove=null;
+					}
+					
+					//右边
+					if(r<=5){
+						document.onmousemove=function(ev){
+							newWidth=divW+ev.clientX-startX;
+							if(newWidth<20){
+								newWidth=20;
+							}
+							div.style.width=newWidth+'px';
+						};
+						document.onmouseup=function(){
+								document.onmousemove=null;							
+						};
+					};
+					//左边
+					if(l<=5){
+						document.onmousemove=function(ev){
+							changeWidth=ev.clientX-startX;
+							newWidth=divW-changeWidth;
+							newLeft=positionL+changeWidth;
+							if(newWidth<20){
+								newWidth=20;
+								newLeft=positionR-30;
+							}
+								div.style.width=newWidth+'px';
+								div.style.left=newLeft+'px';
+						}
+						document.onmouseup=function(){
+								document.onmousemove=null;							
+						};
+					}
+					//上边
+					if(t<=5){
+						document.onmousemove=function(ev){
+							changeHeight=ev.clientY-startY;
+							newHeight=divH-changeHeight;
+							newTop=positionT+changeHeight;
+							if(newHeight<20){
+								newHeight=20;
+								newTop=positionB-30;
+							}
+							div.style.height=newHeight+'px';
+							div.style.top=newTop+'px';
+						}
+						document.onmouseup=function(){
+								document.onmousemove=null;							
+						};
+					}
+					//下边
+					if(b<=5){
+						document.onmousemove=function(ev){
+							newHeight=divH+ev.clientY-startY;
+							if(newHeight<20){
+								newHeight=20;
+								return;
+							}
+							div.style.height=newHeight+'px';
+						};
+						document.onmouseup=function(){
+								document.onmousemove=null;							
+						};
+					}
+					//右下
+					if(r<=5 && b<=5){
+						document.onmousemove=function(ev){
+							newWidth=divW+ev.clientX-startX;
+							newHeight=divH+ev.clientY-startY;
+							if(newWidth<20){
+								newWidth=20;
+							}
+							if(newHeight<20){
+								newHeight=20;
+							}
+							div.style.width=newWidth+'px';
+							div.style.height=newHeight+'px';
+						}
+					}
+					//右上
+					if(r<=5 && t<=5){
+						document.onmousemove=function(ev){
+							changeHeight=ev.clientY-startY;
+							changeWidth=ev.clientX-startX;
+							newHeight=divH-changeHeight;
+							newWidth=divW+changeWidth;
+							newTop=positionT+changeHeight;
+							if(newWidth<20){
+								newWidth=20;
+							}
+							if(newHeight<20){
+								newHeight=20;
+								newTop=positionB-30;
+							}
+							div.style.height=newHeight+'px';
+							div.style.top=newTop+'px';
+							div.style.width=newWidth+'px';
+						}
+					}
+					//左下
+					if(l<=5 && b<=5){
+						document.onmousemove=function(ev){
+							changeHeight=ev.clientY-startY;
+							changeWidth=ev.clientX-startX;
+							newWidth=divW-changeWidth;
+							newHeight=divH+changeHeight;
+							newLeft=positionL+changeWidth;
+							if(newHeight<20){
+								newHeight=20;
+							}
+							if(newWidth<20){
+								newWidth=20;
+								newLeft=positionR-30;
+							}
+								div.style.width=newWidth+'px';
+								div.style.left=newLeft+'px';
+								div.style.height=newHeight+'px';
+								div.style.width=newWidth+'px';
+						}
+					}
+					//左上
+					if(l<=5 && t<=5){
+						document.onmousemove=function(ev){
+							changeHeight=ev.clientY-startY;
+							changeWidth=ev.clientX-startX;
+							newWidth=divW-changeWidth;
+							newHeight=divH-changeHeight;
+							newLeft=positionL+changeWidth;
+							newTop=positionT+changeHeight;
+							
+							if(newHeight<20){
+								newHeight=20;
+								newTop=positionB-30;
+							}
+							if(newWidth<20){
+								newWidth=20;
+								newLeft=positionR-30;
+							}
+							div.style.height=newHeight+'px';
+							div.style.top=newTop+'px';
+							div.style.width=newWidth+'px';
+							div.style.left=newLeft+'px';
+						}
+					}
+					
+					
+				};
+				//改变鼠标标志
+				document.addEventListener('mousemove',function(ev){
+					var l=ev.clientX-getAtt(div).left;
+					var r=getAtt(div).right-ev.clientX;
+					var t=ev.clientY-getAtt(div).top;
+					var b=getAtt(div).bottom-ev.clientY;
+					//判断鼠标放在了左上角
+					if(l<=5 && t<=5){
+						div.style.cursor='nw-resize';
+						return;
+					}
+					//判断鼠标放在了右上角
+					if(t<=5 && r<=5){
+						div.style.cursor='ne-resize';
+						return;
+					}
+					//判断鼠标放在了右下角
+					if(r<=5 && b<=5){
+						div.style.cursor='se-resize';
+						return;
+					}
+					//判断鼠标放在了左下角
+					if(l<=5 && b<=5){
+						div.style.cursor='sw-resize';
+						return;
+					}
+					//判断鼠标放在了左边
+					if(l<=5){
+						//div.setAttribute('style','cursor:w-resize');用这种方法添加属性，元素只有添加上的属性，其余的属性会都没有了。
+						div.style.cursor='w-resize';
+						return;
+					}
+					//判断鼠标放在了右边上
+					if(r<=5){
+						div.style.cursor='e-resize';
+						return;
+					}
+					//判断鼠标放在上边
+					if(t<=5){
+						div.style.cursor='n-resize';
+						return;
+					}
+					//判断鼠标放在了下边
+					if(b<=5){
+						div.style.cursor='s-resize';
+						return;
+					}
+					div.style.cursor='default';
+				})
+				
+				function getAtt(obj){
+					return obj.getBoundingClientRect()
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>
