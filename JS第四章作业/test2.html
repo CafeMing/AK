@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				margin:0;
+				padding:0;
+			}
+			#box{
+				border:1px solid black;
+				overflow: hidden;
+				color:white;
+				background:linear-gradient(to bottom,#6b6b6b,black 85%);
+				float:left
+			}
+			#left{
+				height:280px;
+				width:380px;
+				float:left;
+				padding:10px;
+				border:1px solid black;
+			}
+			#middle{
+				float:left;
+			}
+			#middle button{
+				background:#595858;
+				border-radius:30px;
+				font:15px/25px "微软雅黑";
+				border:1px solid black;
+				cursor:pointer;
+				color:whitesmoke;
+				padding:0 15px 0 15px;
+				margin:40px 40px 20px 40px;
+			}
+			#middle button:hover{
+				background:black;
+			}
+			#middle #numb{
+				font:15px/30px "微软雅黑";
+				margin-left:55px;
+				border-style:solid none solid none;
+				border-width: 1px 0;
+				border-color: black;
+				width:100px;
+				text-align: center;
+				opacity: 0;
+			}
+			#middle #numb.active{
+				opacity:1;
+			}
+			#middle #color{
+				margin:20px 0 0 30px;
+				height:30px;
+				overflow: hidden;
+			}
+			#middle #color span{
+				float:left;
+				width:20px;
+				height:20px;
+				background:orange;
+				margin-right:5px;
+			}
+			#right{
+				height:280px;
+				width:380px;
+				float:left;
+				padding:10px;
+				border:1px solid black;
+			}
+		</style>
+		<script src="js/test2.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="left">
+				乐高公司创办于丹麦，至今已有80年的发展历史，追本溯源，还得从它的金字招牌LEGO说起。商标“LEGO”的使用是从1932年开始，其语来自丹麦语“LEg GOdt”，意为“play well”（玩得快乐），并且该名字首先迅速成为乐高公司在Billund地区玩具工厂生产的优质玩具的代名词。多年来，“LEGO”图标也变化了多种形式，最新的图标是1998年制作，它是在1973年的版本基础上稍作调整而成，使之更便于在媒体上传播和识别。第一个生产地在丹麦的一所红房子中，那里就是乐高开始的地方。
+			</div>
+			<div id="middle">
+				<button>把文字移到右边</button>
+				<div id="numb" >
+					<span id="show"></span>/<span id="length"></span>
+				</div>
+				<div id="color">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div id="right">
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,120 @@
+div,p,{
+	margin:0;
+	padding:0;
+}
+#box1{
+	width:500px;
+	height:400px;
+	background:linear-gradient(to bottom,#6b6b6b,black 85%);
+	position:relative;
+	overflow: hidden;
+}
+#box2{
+	margin:10px 0 0 20px;
+	width:410px;
+	font:15px/25px "微软雅黑";
+	color:whitesmoke;
+	float:left;
+	text-align: left;
+}
+/*右边展开的样式*/
+input.btn{
+	background:#595858;
+	border-radius:15%;
+	font:15px/25px "微软雅黑";
+	border:1px solid black;
+	cursor:pointer;
+	color:whitesmoke;
+	padding:0 15px 0 15px;
+	margin-top:10px;
+	position:absolute;
+	right:5px;
+	transition:0.5s ease-out;
+}
+input.btn:hover{
+	background:black;
+}
+#btn input:nth-of-type(2){
+	z-index: -1;
+	opacity: 0;
+}
+#btn input:nth-of-type(3){
+	z-index: -1;
+	opacity: 0;
+}
+#btn input.active1{
+	z-index: 0;
+	transform:translateY(36px);
+	opacity: 1;
+}
+#btn input.active2{
+	z-index: 0;
+	transform:translateY(72px);
+	opacity: 1;
+}
+/*底下跳出来的样式*/
+#box3{
+	margin-left:20px;
+	width:430px;
+	height:130px;
+	position:absolute;
+	bottom:-130px;
+	transition: 0.8s ease-out;
+	opacity: 1;
+	padding-left:20px
+}
+#box3.box3active{
+	transform:translateY(-150px);
+	opacity:1;
+}
+#box3 span{
+	float:left;
+	margin-top:15px;
+	font:15px/25px "微软雅黑";
+	color:white;
+	padding:0 9px;
+	cursor:pointer;
+}
+#box3 span.changebg{
+	background:#242323;
+	border:1px solid black;
+}
+/*查看的样式*/
+#check .textcheck{
+	position:absolute;
+	top:45px;
+	left:20px;
+}
+#check #btncheck1{
+	padding:0 15px;
+	position:absolute;
+	top:45px;
+	left:200px;
+	border-radius: 15%;
+}
+/*替换的样式*/
+#change .textcheck{
+	position:absolute;
+	top:45px;
+	left:20px;
+}
+#change .textchange{
+	position: absolute;
+	top:45px;
+	left:190px;
+	margin-left:10px;
+}
+
+#change #btnchange1{
+	padding:0 15px;
+	position:absolute;
+	top:45px;
+	left:380px;
+	border-radius: 15%;
+}
+.show{
+	display:block;
+}
+.dissapear{
+	display:none;
+}
