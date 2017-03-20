@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:100px;
+				height:100px;
+				background:red;
+				position:absolute;
+				left:0;
+				top:0;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var box=document.querySelector("div");
+				var timerR;
+				var timerL;
+				var timerT;
+				var timerB;
+				var step=5;
+				//当点击键盘
+				document.onkeydown=function(ev){
+					//console.log(ev.keyCode);
+					//左：37 上：38  右：39 下：40
+					//按下左键
+					if(ev.keyCode==37){
+						clearInterval(timerL);
+						timerL=setInterval(function(){
+						box.style.left=box.offsetLeft-step+'px';
+						},15)
+					}
+					//按下右键
+					if(ev.keyCode==39){
+						clearInterval(timerR);
+						timerR=setInterval(function(){
+						box.style.left=box.offsetLeft+step+'px';
+						},15)
+					}
+					//按下上键
+					if(ev.keyCode==38){
+						clearInterval(timerT);
+						timerT=setInterval(function(){
+						box.style.top=box.offsetTop-step+'px';
+						},15)
+					}
+					//按下下键
+					if(ev.keyCode==40){
+						clearInterval(timerB);
+						timerB=setInterval(function(){
+						box.style.top=box.offsetTop+step+'px';
+						},15)
+					}
+				}
+				//当松开键盘
+				document.onkeyup=function(ev){
+					//松开左键
+					if(ev.keyCode==37){
+						clearInterval(timerL);
+					}
+					//松开上键
+					if(ev.keyCode==38){
+						clearInterval(timerT);
+					}
+					//松开右键
+					if(ev.keyCode==39){
+						clearInterval(timerR);
+					}
+					//松开下键
+					if(ev.keyCode==40){
+						clearInterval(timerB);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				position:relative;
+				width:320px;
+				height:480px;
+				overflow:hidden;
+				margin:100px auto 0;
+			}
+			ul{
+				width:1280px;
+				margin:0;
+				padding:0;
+				list-style:none;
+				font-size:0;
+				position:absolute;
+				left:-320px;   /*图片的初始位置*/
+				top:-480px;;
+				
+			}
+		</style>
+		<script src="js/move.js"></script>
+		<script>
+			window.onload=function(){
+				var ul=document.querySelector("ul");
+				var	img=document.querySelector("img");
+				var imgWidth=img.offsetWidth;     //获取到一张图片的宽度
+				var imgHeight=img.offsetHeight;		//获取到一张图片的高度
+				var canmove=true;   			//用来判断是否移动完成
+				//处理图片位置关系
+				//左：37 上：38  右：39 下：40	
+				document.onkeydown=function(ev){
+					
+					var l=ul.offsetLeft;  //获取到最初的位置（离左边）
+					var t=ul.offsetTop;		//获取到最初的位置（离上边）
+					//按左键
+					if(ev.keyCode==37 && canmove){
+						canmove=false;
+						move(ul,{left:l-imgWidth},1000,'linear',function(){
+							canmove=true;  //移动完成了
+							if(l<=-imgWidth*2){
+								ul.style.left=-imgWidth+'px';
+							}
+						});
+					}
+					//按右键
+					if(ev.keyCode==39 && canmove){
+						canmove=false;
+						move(ul,{left:l+imgWidth},1000,'linear',function(){
+							canmove=true;
+							if(l>=-imgWidth){
+								ul.style.left=-imgWidth*2+'px';
+							}
+						});
+					}
+					//按上键
+					if(ev.keyCode==38 && canmove){
+						canmove=false;
+						move(ul,{top:t-imgHeight},1000,'linear',function(){
+							canmove=true;
+							if(t<=-imgHeight*2){
+								ul.style.top=-imgHeight+'px';
+							}
+						})
+					}
+					//按下键
+					if(ev.keyCode==40 && canmove){
+						canmove=false;
+						move(ul,{top:t+imgHeight},1000,'linear',function(){
+							canmove=true;
+							if(t>=-imgHeight){
+								ul.style.top=-imgHeight*2+'px';
+							}
+						})
+					}
+					
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<ul>
+				<li><img src="img/c037c7ebdd05444080cfe81580bbc3f6.jpeg"/><img src="img/sj0923lv02.jpg"/><img src="img/c037c7ebdd05444080cfe81580bbc3f6.jpeg"/><img src="img/sj0923lv02.jpg"/></li>
+				<li><img src="img/t0129094bd7e2a9f417.jpg"/><img src="img/26102182_1379804963724_320x480.jpg"/><img src="img/t0129094bd7e2a9f417.jpg"/><img src="img/26102182_1379804963724_320x480.jpg"/></li>
+				<li><img src="img/c037c7ebdd05444080cfe81580bbc3f6.jpeg"/><img src="img/sj0923lv02.jpg"/><img src="img/c037c7ebdd05444080cfe81580bbc3f6.jpeg"/><img src="img/sj0923lv02.jpg"/></li>
+				<li><img src="img/t0129094bd7e2a9f417.jpg"/><img src="img/26102182_1379804963724_320x480.jpg"/><img src="img/t0129094bd7e2a9f417.jpg"/><img src="img/26102182_1379804963724_320x480.jpg"/></li>
+			</ul>
+		</div>
+	</body>
+</html>

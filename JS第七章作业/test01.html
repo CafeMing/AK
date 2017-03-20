@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:300px;
+				height:400px;
+				border:1px solid black;
+				border-radius:20px;
+				position:relative;
+			}
+			input{
+				display:block;
+				width:275px;
+				position:absolute;
+				bottom:0;
+				left:50%;
+				margin-bottom: 5px;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var input=document.querySelector("input");
+				var ul=document.querySelector("ul");
+				
+				input.style['margin-left']=-input.offsetWidth/2+'px';
+				
+				input.value='请点击这里输入内容，按Enter或Enter+Ctrl发送';
+				//点击输入框
+				input.onclick=function(ev){
+					input.value='';
+					ev.cancelBubble=true;
+					
+				}
+				//Enter 13    
+				input.onkeydown=function(ev){
+					//console.log(ev.keyCode);
+					if(ev.keyCode==13 || (ev.keyCode==13 && ev.ctrlKey) ){
+						
+						var li=document.createElement('li');
+						li.innerHTML=this.value;
+						ul.appendChild(li);	
+						input.value='';
+					}
+				}
+				
+				document.onclick=function(){
+					input.value='请点击这里输入内容，按Enter或Enter+Ctrl发送';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<ul></ul>
+			<input type="text" />
+		</div>
+		
+	</body>
+</html>
